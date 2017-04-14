@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fe.js",
+  "scripts": {
+    "proxy": "nodemon --exec \"node proxy.js\"",
+    "proxy:local": "nodemon --exec \"node proxy.js --local\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.15.2",
+    "http-proxy-middleware": "^0.17.4",
+    "node-args": "^1.0.02",
+    "nodemon": "^1.11.0"
+  }
+}
