@@ -2,7 +2,7 @@ const express = require('express')
 const proxy = require('http-proxy-middleware')
 const args = require('node-args')
 
-const { proxyList, proxyListLocal } = require('./config')
+const { proxyList, proxyListLocal } = require('./proxyConfig')
 
 const isRemote = !args.local
 const isLocal = args.local
