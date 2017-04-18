@@ -4,8 +4,8 @@
   "description": "",
   "main": "fe.js",
   "scripts": {
-    "proxy": "nodemon --exec \"node proxy.js\"",
-    "proxy:local": "nodemon --exec \"node proxy.js --local\""
+    "proxy": "nodemon --exec \"sudo node app.js\"",
+    "proxy:local": "nodemon --exec \"sudo node app.js --local\""
   },
   "keywords": [],
   "author": "",

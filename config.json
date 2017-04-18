@@ -1,0 +1,7 @@
+{
+    "local_fe": "http://localhost:5180",
+    "local_be": "http://localhost:5188",
+    "local_vr": "http://localhost:5000",
+    "remote_api": "http://develop.sfdd.lab",
+    "local_api": "http://localhost:8000"
+}
