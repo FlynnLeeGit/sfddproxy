@@ -34,13 +34,13 @@ module.exports = {
     { from: frontFilter, target: 'http://localhost:8080' }
   ],
   proxyListLocal: [
-    { from: '/_fapi', target: 'http://localhost:8000' },
-    { from: '/_bapi', target: 'http://localhost:8000' },
-    { from: '/_common', target: 'http://localhost:8000' },
-    { from: '/superman', target: 'http://localhost:3000' },
-    { from: backendHmrFilter, target: 'http://localhost:3000' },
-    { from: frontHmrFilter, target: 'http://localhost:8080' },
+    { from: '/_fapi', target: 'http://192.168.1.157:8000' },
+    { from: '/_bapi', target: 'http://192.168.1.157:8000' },
+    { from: '/_common', target: 'http://192.168.1.157:8000' },
+    { from: '/superman', target: 'http://192.168.1.157:5188' },
+    { from: backendHmrFilter, target: 'http://192.168.1.157:5188' },
+    { from: frontHmrFilter, target: 'http://192.168.1.157:8080' },
     // 此条规则一定要放在最后来匹配前台路径代理
-    { from: frontFilter, target: 'http://localhost:8080' }
+    { from: frontFilter, target: 'http://192.168.1.157:8080' }
   ]
 }
