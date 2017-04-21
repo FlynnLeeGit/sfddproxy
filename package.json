@@ -5,6 +5,7 @@
   "main": "fe.js",
   "scripts": {
     "proxy": "nodemon --exec \"sudo node app.js\"",
+    "start": "nodemon --exec \"sudo node app.js\"",
     "proxy:local": "nodemon --exec \"sudo node app.js --local\""
   },
   "keywords": [],
