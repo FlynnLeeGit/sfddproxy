@@ -21,6 +21,11 @@ const vrHmrFilter = (pathname, req) => {
   return isHmr(pathname) && isVr(req.headers.referer)
 }
 
+const vrFilter = (pathname, req) => {
+  return isVr(req.headers.referer)
+}
+const vrRewrite = (path, req) => path.replace('/virtual_reality', '/')
+
 const {
   local_fe,
   local_be,

@@ -11,23 +11,27 @@ const app = express()
 
 if (isRemote) {
   proxyList.forEach(item => {
-    app.use(
-      proxy(item.from, {
-        target: item.target,
-        changeOrigin: true
-      })
-    )
+    const options = {
+      target: item.target,
+      changeOrigin: true
+    }
+    if (item.pathRewrite) {
+      options.pathRewrite = item.pathRewrite
+    }
+    app.use(proxy(item.from, options))
   })
 }
 
 if (isLocal) {
   proxyListLocal.forEach(item => {
-    app.use(
-      proxy(item.from, {
-        target: item.target,
-        changeOrigin: true
-      })
-    )
+    const options = {
+      target: item.target,
+      changeOrigin: true
+    }
+    if (item.pathRewrite) {
+      options.pathRewrite = item.pathRewrite
+    }
+    app.use(proxy(item.from, options))
   })
 }
 
