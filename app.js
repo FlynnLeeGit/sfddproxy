@@ -9,30 +9,22 @@ const isLocal = args.local
 
 const app = express()
 
-if (isRemote) {
-  proxyList.forEach(item => {
+const proxyTask = list => {
+  list.forEach(item => {
     const options = {
       target: item.target,
       changeOrigin: true
-    }
-    if (item.pathRewrite) {
-      options.pathRewrite = item.pathRewrite
     }
     app.use(proxy(item.from, options))
   })
 }
 
+if (isRemote) {
+  proxyTask(proxyList)
+}
+
 if (isLocal) {
-  proxyListLocal.forEach(item => {
-    const options = {
-      target: item.target,
-      changeOrigin: true
-    }
-    if (item.pathRewrite) {
-      options.pathRewrite = item.pathRewrite
-    }
-    app.use(proxy(item.from, options))
-  })
+  proxyTask(proxyListLocal)
 }
 
 console.log('请注意使用sudo 执行在linux下的80端口权限！')
