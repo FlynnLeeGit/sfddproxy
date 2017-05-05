@@ -1,3 +1,12 @@
+const {
+  local_fe,
+  local_be,
+  local_vr,
+  local_m,
+  remote_api,
+  local_api
+} = require('./config')
+
 const isFrontend = path =>
   !(path.match('/_fapi') ||
     path.match('/_common') ||
@@ -30,15 +39,6 @@ const vrFilter = (pathname, req) => {
 const mHmrFilter = (pathname, req) => {
   return isHmr(pathname) && isM(req.headers.referer)
 }
-
-const {
-  local_fe,
-  local_be,
-  local_vr,
-  local_m,
-  remote_api,
-  local_api
-} = require('./config')
 
 const proxyList = [
   {
